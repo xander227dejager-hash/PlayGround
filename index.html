@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brightwood Academy · Class Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><div class="brand-name">BRIGHTWOOD</div><div class="brand-sub">ACADEMY</div></div></div>
+      <div class="day-pill"><span class="sun">☀</span> TUESDAY · PERIOD 3</div>
+      <div class="top-actions"><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button><button class="profile"><span class="avatar-mini">🧑‍🏫</span> Ms. Rivera <span class="chev">⌄</span></button></div>
+    </header>
+    <section class="game-layout">
+      <aside class="sidebar">
+        <div class="side-title">CLASS QUEST <span class="spark">✦</span></div>
+        <div class="lesson-card"><div class="lesson-kicker">TODAY'S LESSON</div><div class="lesson-title">The Water Cycle</div><div class="lesson-time">◷ 09:00 — 09:45</div></div>
+        <nav class="steps">
+          <div class="step active"><span class="step-icon">▣</span><div><b>Warm up</b><small>Get curious</small></div><i>✓</i></div>
+          <div class="step"><span class="step-icon">◉</span><div><b>Teach</b><small>Share the story</small></div><i>2</i></div>
+          <div class="step"><span class="step-icon">◇</span><div><b>Practice</b><small>Try it together</small></div><i>3</i></div>
+          <div class="step"><span class="step-icon">☆</span><div><b>Celebrate</b><small>Wrap it up</small></div><i>4</i></div>
+        </nav>
+        <div class="side-bottom"><div class="streak"><span class="flame">♨</span><div><b>3 day streak</b><small>You're on fire!</small></div></div><div class="tip"><span>💡</span><p><b>Teacher tip</b><br>Ask “why?” to spark deeper thinking.</p></div></div>
+      </aside>
+      <section class="main-stage">
+        <div class="stage-heading"><div><div class="eyebrow">ROOM 204 · SCIENCE LAB</div><h1>Good morning, class!</h1><p>Let's discover where a raindrop's adventure begins.</p></div><div class="progress-wrap"><div class="progress-label"><span>CLASS PROGRESS</span><b id="progressText">25%</b></div><div class="progress-bar"><span id="progressBar"></span></div></div></div>
+        <div class="canvas-wrap"><canvas id="scene"></canvas><div class="scene-label"><span class="live-dot"></span> LIVE CLASSROOM <span class="label-divider">·</span> 24 STUDENTS</div><div class="hint"><span>🖱</span> Drag to look around <span class="hint-key">W A S D</span> Move</div><div class="crosshair">+</div><div class="speech" id="speech"><div class="speech-tail"></div><b>Ready to learn?</b><span>Click the cards on the board to begin!</span></div></div>
+        <div class="bottom-row">
+          <div class="students-card"><div class="card-head"><div><div class="eyebrow">YOUR CLASS</div><h2>Everyone's ready</h2></div><div class="mood"><span>☺</span> <b id="moodText">Curious</b></div></div><div class="student-avatars"><span class="student s1">👧</span><span class="student s2">👦</span><span class="student s3">👩🏽‍🎓</span><span class="student s4">👦🏿</span><span class="student s5">👧🏻</span><span class="student more">+19</span></div></div>
+          <div class="mission-card"><div class="eyebrow">NEXT UP</div><div class="mission-main"><span class="mission-icon">💧</span><div><b id="missionTitle">Spot the stages</b><small id="missionSub">Help the class order the water cycle</small></div><button id="missionBtn">START <span>→</span></button></div></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <div class="modal hidden" id="quizModal"><div class="modal-card"><button class="modal-close" id="closeQuiz">×</button><div class="modal-icon">💧</div><div class="eyebrow">WARM UP QUESTION</div><h2>Where does rainwater go<br>after it falls?</h2><p class="modal-copy">Choose the best answer. Your class is watching!</p><div class="answers"><button data-answer="A">A <span>It evaporates right away</span></button><button data-answer="B">B <span>It collects in rivers and lakes</span></button><button data-answer="C">C <span>It turns into snow</span></button></div><div class="feedback" id="feedback"></div></div></div>
+  <div class="toast" id="toast">Great thinking! +10 class points ✨</div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
